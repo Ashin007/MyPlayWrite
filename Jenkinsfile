@@ -20,20 +20,4 @@ pipeline {
             }
         }
 
-        stage('Publish Report') {
-            steps {
-                playWrightReport (
-                    sourceDirectory: 'target/surefire-reports/',
-                    reportDirectory: 'target/playwright-reports/',
-                    reportTitle: 'Playwright Test Report'
-                )
-            }
-        }
-    }
-
-    post {
-        always {
-            junit 'target/surefire-reports/*.xml'
-        }
-    }
 }
