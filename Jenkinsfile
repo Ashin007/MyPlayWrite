@@ -1,8 +1,10 @@
 pipeline {
    agent {
-        docker { image 'mcr.microsoft.com/playwright:v1.32.0-focal' } }
+        any
+        //docker { image 'mcr.microsoft.com/playwright:v1.32.0-focal' } }
    tools {
-   maven 'maven'
+        maven 'maven-3.8.1'
+        jdk 'jdk8'
    }
    stage('Build') {
                steps {
