@@ -1,9 +1,17 @@
 pipeline {
-    agent {
-        label 'linux'
+    agent any
+
+    tools {
+        maven 'maven-3.8.1'
+        jdk 'jdk8'
     }
 
     stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Build') {
             steps {
@@ -19,5 +27,6 @@ pipeline {
 
 
     }
+
 
 }
