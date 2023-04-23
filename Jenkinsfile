@@ -19,7 +19,9 @@ pipeline {
 
         stage('Test') {
             steps {
+                dir(path: "${workspace}"){
                 bat 'mvn clean install'
+                }
             }
         }
 
