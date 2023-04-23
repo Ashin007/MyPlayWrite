@@ -7,7 +7,7 @@ pipeline {
    stages {
       stage('E2E Test') {
          steps {
-            mvn clean test -DsuiteXmlFile=testng.xml
+            sh "mvn clean test -DsuiteXmlFile=testng.xml"
          }
       }
    }
