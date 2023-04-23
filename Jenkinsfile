@@ -1,6 +1,7 @@
 pipeline {
     agent any
 
+
     stages {
         stage('Checkout') {
             steps {
@@ -19,5 +20,8 @@ pipeline {
                 sh 'mvn test'
             }
         }
+
+
+    }
 
 }
