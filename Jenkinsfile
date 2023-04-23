@@ -4,10 +4,15 @@ pipeline {
    tools {
    maven 'maven'
    }
+   stage('Build') {
+               steps {
+                   sh 'mvn clean package'
+               }
+           }
    stages {
       stage('E2E Test') {
          steps {
-            sh "mvn clean test -DsuiteXmlFile=testng.xml"
+            sh 'mvn test'
          }
       }
    }
