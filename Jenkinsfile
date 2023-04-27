@@ -5,10 +5,6 @@ pipeline {
             }
            }
 
-    tools {
-        maven 'Local_Maven'
-        jdk 'Local_Java'
-    }
 
     stages {
         stage('Checkout') {
